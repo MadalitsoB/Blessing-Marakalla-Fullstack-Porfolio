@@ -208,26 +208,30 @@ body {
   font-size: 1.05rem;
   line-height: 1.9;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0;
   color: var(--text-light);
   letter-spacing: 0.2px;
 }
 
 .about-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px 1fr;
   align-items: center;
-  gap: 2.5rem;
-  max-width: 900px;
+  gap: 2rem;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 280px;
+  height: 340px;
+  border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
+  object-position: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  justify-self: start;
+  margin-left: -20px;
+  display: block;
 }
 
 .skills {
