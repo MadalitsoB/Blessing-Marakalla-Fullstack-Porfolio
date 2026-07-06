@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IHUB Prototype Bug Report</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        line-height: 1.7;
+        color: #1f1f1f;
+        background: #f8f5fc;
+        margin: 0;
+        padding: 0 1rem 3rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2.5rem 0;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #111111;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+      h2 {
+        font-size: 1.35rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      p,
+      li {
+        color: #3d2d4c;
+      }
+      ul {
+        margin-left: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .summary {
+        background: #ffffff;
+        border: 1px solid #e6ddec;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      }
+      a {
+        color: #000000;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .nav {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>IHUB Prototype Bug Report</h1>
+      <p>
+        This report documents the QA findings for the IHUB prototype, including
+        major HTML, navigation, script, and asset issues.
+      </p>
+
+      <section class="summary">
+        <h2>1. Major HTML structure bug in <code>index.html</code></h2>
+        <ul>
+          <li>
+            The homepage <code>section id="journey"</code> /
+            <code>.timeline</code> block is malformed.
+          </li>
+          <li>
+            The fifth <code>.t-step</code> item does not close before the next
+            <code>&lt;section class="carousel-section"&gt;</code> begins.
+          </li>
+          <li>
+            Missing closures:
+            <ul>
+              <li><code>&lt;/div&gt;</code> for the last timeline step</li>
+              <li><code>&lt;/div&gt;</code> for <code>.timeline</code></li>
+            </ul>
+          </li>
+          <li>
+            The <code>section id="journey"</code> block is incorrectly nested,
+            causing unpredictable browser DOM autocorrection and
+            layout/accessibility issues.
+          </li>
+        </ul>
+
+        <h2>
+          2. Mobile navigation problem on <code>about.html</code> and
+          <code>contact.html</code>
+        </h2>
+        <ul>
+          <li>
+            Both pages include <code>.nav-links</code> but omit the mobile menu
+            checkbox (<code>&lt;input id="navCheck"&gt;</code>) and the
+            hamburger toggle (<code>.nav-toggle</code>).
+          </li>
+          <li>
+            The responsive CSS at <code>@media (max-width: 880px)</code> hides
+            <code>.nav-links</code> by default and only reveals them when
+            <code>navCheck</code> is checked.
+          </li>
+          <li>
+            On tablet/phone widths, the menu is likely hidden and cannot be
+            opened on those pages.
+          </li>
+          <li>
+            <code>programme.html</code> and <code>index.html</code> are not
+            affected because they include the mobile menu markup.
+          </li>
+        </ul>
+
+        <h2>3. Interactive functionality is missing</h2>
+        <ul>
+          <li>
+            The site includes interactive elements such as carousel controls and
+            modal triggers with <code>data-modal-open</code> /
+            <code>data-modal-close</code>.
+          </li>
+          <li>
+            <code>scripts.js</code> is empty, so these behaviors are not
+            implemented.
+          </li>
+          <li>
+            As a result:
+            <ul>
+              <li>Carousel controls will not work.</li>
+              <li>Modals will not open or close.</li>
+              <li>Any JavaScript-based enhancements are non-functional.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>4. Asset path risk</h2>
+        <ul>
+          <li>
+            <code>index.html</code> references an image with spaces and commas
+            in the filename:
+          </li>
+          <li>
+            <code
+              >./assets/300673_6c38f9845d8d8533bb6d7e2dacb4a291-6_18_2026,
+              3_14_48 AM.png</code
+            >
+          </li>
+          <li>
+            This may work in some browsers but is fragile and can fail on
+            certain servers or reference patterns.
+          </li>
+        </ul>
+
+        <h2>5. Responsiveness assessment</h2>
+        <ul>
+          <li>
+            Page layout is generally responsive with good mobile breakpoints.
+          </li>
+          <li>
+            Responsive behavior is described correctly for hero sections,
+            stacked cards, timeline layout, and form/carousel adaptations.
+          </li>
+          <li>
+            However, actual experience is not fully correct on all pages
+            because:
+            <ul>
+              <li>
+                <code>index.html</code> / <code>programme.html</code> likely
+                work on laptop/tablet/phone aside from the malformed timeline
+                and missing JS.
+              </li>
+              <li>
+                <code>about.html</code> and <code>contact.html</code> likely
+                break on tablet/phone due to inaccessible mobile navigation.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>Summary</h2>
+        <ul>
+          <li>
+            Critical bug: malformed HTML in
+            <code>index.html</code> timeline/carousel area.
+          </li>
+          <li>
+            Important functional bug: empty <code>scripts.js</code> prevents
+            carousel and modal interactions.
+          </li>
+          <li>
+            Significant responsive bug: missing mobile nav toggle on
+            <code>about.html</code> and <code>contact.html</code>.
+          </li>
+          <li>
+            Visual layout is mostly responsive, but these issues prevent a clean
+            multi-device experience.
+          </li>
+        </ul>
+      </section>
+
+      <div class="nav">
+        <a href="index.html">← Back to Portfolio</a>
+      </div>
+    </div>
+  </body>
+</html>
