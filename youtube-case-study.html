@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study: YouTube Clone - Blessing Marakalla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="case-study-page">
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Blessing Marakalla</div>
+        <ul class="nav-links">
+          <li><a href="index.html">&larr; Back To Portfolio</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container case-study-container">
+      <header class="case-study-header">
+        <span class="tagline">Project Deep Dive</span>
+        <h1>YouTube Clone</h1>
+        <p class="subtitle">
+          Building a functional YouTube prototype using HTML, CSS, and Vanilla JavaScript.
+        </p>
+      </header>
+
+      <section class="case-study-content">
+        <div class="cs-block">
+          <h2>Executive Summary</h2>
+          <p>
+            This project is a front-end web application that replicates the core user interface and interactive features of YouTube. Built using vanilla HTML, CSS, and JavaScript, it demonstrates practical web development skills including responsive design, DOM manipulation, state management, and user experience considerations.
+          </p>
+        </div>
+
+        <div class="cs-block">
+          <h2>Project Overview</h2>
+          <p><strong>Objective:</strong> To create a functional prototype of YouTube's user interface with core interactive features, providing an educational demonstration of modern web development practices without relying on frameworks.</p>
+          
+          <p class="cs-subheading"><strong>Technology Stack:</strong></p>
+          <ul class="cs-list">
+            <li>HTML5: Semantic markup and structure</li>
+            <li>CSS3: Responsive design, flexbox layout, theme switching</li>
+            <li>JavaScript (Vanilla): DOM manipulation, event handling, local storage management</li>
+          </ul>
+
+          <p class="cs-subheading"><strong>Key Deliverables:</strong></p>
+          <ul class="cs-list">
+            <li>Responsive navigation bar with search functionality</li>
+            <li>Collapsible sidebar with subscription management</li>
+            <li>Video grid with hover previews</li>
+            <li>Video modal with playback capabilities</li>
+            <li>Dark/Light theme toggle</li>
+            <li>Mobile-responsive design</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>Technical Architecture</h2>
+          <p class="cs-subheading"><strong>User Interface Components</strong></p>
+          
+          <p><strong>Navigation Bar:</strong></p>
+          <ul class="cs-list">
+            <li>YouTube logo with branding</li>
+            <li>Real-time search bar with filtering capabilities</li>
+            <li>Action buttons for create, notifications, theme toggle, and profile</li>
+            <li>Sticky positioning to remain visible during scroll</li>
+            <li>Responsive design with icons showing/hiding based on screen size</li>
+          </ul>
+
+          <p><strong>Sidebar Navigation:</strong></p>
+          <ul class="cs-list">
+            <li>Navigation sections for Home and Shorts</li>
+            <li>Subscriptions section with channel links and custom icons</li>
+            <li>Hamburger menu for mobile screens</li>
+            <li>Active state indicators for current section</li>
+          </ul>
+
+          <p><strong>Video Grid:</strong></p>
+          <ul class="cs-list">
+            <li>Video cards displaying thumbnail, title, channel, and stats</li>
+            <li>Interactive hover overlays with action buttons</li>
+            <li>Click-to-play modal functionality</li>
+            <li>Responsive layout adapting from 1 to 6+ columns based on screen size</li>
+          </ul>
+
+          <p class="cs-subheading"><strong>JavaScript Functionality</strong></p>
+          
+          <p><strong>Sidebar Toggle (Mobile):</strong> Event listeners for menu button clicks toggle the sidebar active state, with auto-close on main content click for smaller screens.</p>
+
+          <p><strong>Search & Filter System:</strong> Real-time filtering by title and channel name with case-insensitive matching and dynamic card visibility updates on keyup events for immediate feedback.</p>
+
+          <p><strong>Theme Management:</strong> User preferences saved to localStorage with support for light and dark modes, persisting across browser sessions using data-theme attributes.</p>
+
+          <p><strong>Video Modal System:</strong> Parses YouTube URLs to extract video IDs, handles multiple video sources (YouTube embeds, local files, fallbacks), and supports keyboard shortcuts like ESC to close.</p>
+
+          <p><strong>Video Preview Overlay:</strong> Dynamically created hover overlays displaying title, channel, and action buttons for an interactive user experience without page reloads.</p>
+        </div>
+
+        <div class="cs-block">
+          <h2>Responsive Design</h2>
+          <p class="cs-subheading"><strong>Breakpoints:</strong></p>
+          <ul class="cs-list">
+            <li>Mobile: ≤ 768px</li>
+            <li>Tablet: 768px - 1024px</li>
+            <li>Desktop: > 1024px</li>
+          </ul>
+
+          <p class="cs-subheading"><strong>Adaptive Features:</strong></p>
+          <ul class="cs-list">
+            <li>Sidebar collapses to mobile menu below 768px</li>
+            <li>Search bar becomes icon-only on small screens</li>
+            <li>Video grid reduces columns on smaller devices</li>
+            <li>Touch-friendly button sizes</li>
+            <li>Flexible navigation bar layout</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>Key Features Implemented</h2>
+          <ul class="cs-list">
+            <li>✓ Responsive Navbar with flexbox and sticky positioning</li>
+            <li>✓ Sidebar Navigation with fixed/mobile toggle and active states</li>
+            <li>✓ Real-time Search and Filtering functionality</li>
+            <li>✓ Video Grid with flexible layout and hover effects</li>
+            <li>✓ Video Modal with click-to-open player</li>
+            <li>✓ Dark/Light Theme Toggle with localStorage persistence</li>
+            <li>✓ Dynamic Video Hover Preview overlays</li>
+            <li>✓ Keyboard Navigation with ESC to close modal</li>
+            <li>✓ Mobile Responsiveness with adaptive layout</li>
+            <li>✓ Filter Categories with active state indicators</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>User Experience Considerations</h2>
+          
+          <p><strong>Accessibility:</strong></p>
+          <ul class="cs-list">
+            <li>Semantic HTML structure (header, aside, main)</li>
+            <li>ARIA labels for buttons</li>
+            <li>Keyboard shortcuts (ESC key support)</li>
+            <li>Alt text for all images</li>
+          </ul>
+
+          <p><strong>Performance Optimizations:</strong></p>
+          <ul class="cs-list">
+            <li>Vanilla JavaScript with no framework overhead</li>
+            <li>Event delegation where applicable</li>
+            <li>Efficient DOM queries with querySelector</li>
+            <li>Considerations for lazy loading images</li>
+          </ul>
+
+          <p><strong>User Feedback:</strong></p>
+          <ul class="cs-list">
+            <li>Visual hover states on interactive elements</li>
+            <li>Active indicators for selected filters</li>
+            <li>Modal overlay for focused content viewing</li>
+            <li>Smooth transitions for theme switching</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>What I Learned</h2>
+          <p>
+            This project reinforced my understanding of core web development concepts:
+          </p>
+          <ul class="cs-list">
+            <li>Advanced DOM manipulation and event handling</li>
+            <li>Complex CSS layouts with flexbox and responsive design patterns</li>
+            <li>State management using localStorage for persistence</li>
+            <li>Building interactive components from scratch</li>
+            <li>Mobile-first design approach and responsive breakpoints</li>
+            <li>User experience best practices and accessibility considerations</li>
+            <li>Debugging and problem-solving with vanilla JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>What I Would Do Differently</h2>
+          <p>
+            If I were to build this again, I would:
+          </p>
+          <ul class="cs-list">
+            <li>Implement infinite scroll or pagination for better performance with large video lists</li>
+            <li>Add more advanced filtering options (by upload date, duration, views)</li>
+            <li>Create a more robust state management system for handling complex interactions</li>
+            <li>Implement animation transitions for better visual feedback</li>
+            <li>Add user account features with profile customization</li>
+            <li>Integrate with real YouTube API for live data</li>
+          </ul>
+        </div>
+
+        <div class="cs-block">
+          <h2>What I'm Proud Of</h2>
+          <p>
+            I'm particularly proud of:
+          </p>
+          <ul class="cs-list">
+            <li>Creating a responsive design that works seamlessly across all device sizes</li>
+            <li>Building a fully functional theme toggle system with localStorage persistence</li>
+            <li>Implementing smooth, intuitive user interactions and hover effects</li>
+            <li>Maintaining clean, organized JavaScript code with modular functions</li>
+            <li>Achieving a close visual match to the real YouTube interface</li>
+            <li>Demonstrating advanced DOM manipulation and event handling skills</li>
+          </ul>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Blessing Marakalla. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
